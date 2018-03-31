@@ -1,5 +1,5 @@
- Copyright (c) 2018 Dejan Radmanovic (SuppresSF0rcE)
- All rights reserved.
+ Copyright (c) 2018 Dejan Radmanovic (SuppresSF0rcE)<br>
+ All rights reserved.<br>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
@@ -15,7 +15,7 @@ furnished to do so, subject to the following conditions:
   3. Neither the names of the RafOS Kernel Development Team, Dejan Radmanovic,
      nor the names of its contributors may be used to endorse
      or promote products derived from this Software without specific prior
-     written permission.
+     written permission.<br>
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
