@@ -11,6 +11,9 @@
 
 #include <stdint.h>
 
+/**
+ * Different VGA BIOS Color attributes
+ */
 enum vga_color{
       VGA_COLOR_BLACK         = 0,
       VGA_COLOR_BLUE          = 1,
@@ -30,10 +33,16 @@ enum vga_color{
       VGA_COLOR_WHITE         = 15
 };
 
+/**
+ *  VGA color entry
+ */
 static inline unit8_t vga_entry_color(enum vga_color fg, enum vga_color bg){
     return fg | bg << 4;
 }
 
+/**
+ * Complete VGA Entry
+ */
 static inline unit16_t vga_entry(unsigned char uc, unit8_t color){
     return (unit16_t) uc | (unit16_t) color << 8;
 }
