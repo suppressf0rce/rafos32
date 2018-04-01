@@ -1,3 +1,11 @@
+;
+; Copyright (c) 2018 by Dejan Radmanovic (SuppresSF0rcE).
+; All Rights Reserved.
+;
+; This file is part of RafOS and is released under the terms
+; of the NSCA License - See LICENSE.md for more info
+; 
+
 # Declare constants for the multiboot header.
 .set ALIGN,     1<<0                ; Align Loaded modules on page boundaries
 .set MEMINFO,   1<<1                ; Provide memory map
