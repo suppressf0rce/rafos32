@@ -1,2 +1,4 @@
 - [ ] Add proper kernel panic in /libc/stdlib/abort.c
 - [ ] Abnormally terminate process as if by SIGABRT in /libc/stdlib/abort.c
+- [ ] Implement stdio and the write system call. /libc/stdio/putchar.c
+- [ ] Set errno to EOVERFLOW. /libc/stdio/printf.c
