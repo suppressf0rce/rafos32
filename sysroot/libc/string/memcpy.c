@@ -29,5 +29,5 @@ void* memcpy(void* restrict destptr, const void* restrict srcptr, size_t size){
   for(size_t i = 0; i < size; i++)
     dst[i] = src[i];
 
-    return dstptr;
+    return destptr;
 }

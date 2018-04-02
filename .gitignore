@@ -1,4 +1,5 @@
 gcc*
 binutils*
-build-binutils*
-build-gcc*
+build-binutils
+build-gcc
+cross-compiler

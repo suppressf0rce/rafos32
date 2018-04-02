@@ -16,5 +16,5 @@
 =======================================================*/
 void kernel_main(void){
   terminal_initialize();
-  printf("Hello, kernel world!\n");
+	printf("Hello, kernel World!\n");
 }

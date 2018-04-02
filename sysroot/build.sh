@@ -1,4 +1,7 @@
 #!/bin/sh
+export PREFIX="$HOME/rafos32/cross-compiler"
+export PATH="$PREFIX/bin:$PATH"
+
 set -e
 . ./headers.sh
 

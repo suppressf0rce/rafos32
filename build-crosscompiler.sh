@@ -1,4 +1,4 @@
-export PREFIX="$HOME/opt/cross"
+export PREFIX="$HOME/rafos32/cross-compiler"
 export TARGET=i686-elf
 export PATH="$PREFIX/bin:$PATH"
 
@@ -13,6 +13,9 @@ echo Downloading Binutils...
 wget https://ftp.gnu.org/gnu/binutils/binutils-$BIN_UTILS_VER.tar.gz
 echo Unpacking Binutils...
 tar -xzf binutils-$BIN_UTILS_VER.tar.gz
+
+echo Patching Binutils...
+patch -s -p0 < binutils.patch
 
 echo Building Bintuils..
 mkdir build-binutils
@@ -42,11 +45,12 @@ make install-target-libgcc
 
 cd ..
 
-
-#Deleting files after we are done Building (Clean the thrash)
-echo Cleaning..,
-rm binutils-$BIN_UTILS_VER.tar.gz
-rm -rf binutils-$BIN_UTILS_VER
+echo Cleaning...
 rm gcc-$GCC_VER.tar.gz
+rm -rf build-gcc
 rm -rf gcc-$GCC_VER
+
+rm binutils-$BIN_UTILS_VER.tar.gz
+rm -rf build-binutils
+rm -rf binutils-$BIN_UTILS_VER
 echo Done!
