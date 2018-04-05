@@ -12,6 +12,7 @@
 #include <string.h>
 
 #include <kernel/tty.h>
+#include <kernel/io.h>
 #include "vga.h"
 
 static const size_t VGA_WIDTH = 80;
@@ -114,6 +115,8 @@ void terminal_putchar(char c) {
       //Returning to beginning
       terminal_row--;
   }
+
+  move_cursor(terminal_column, terminal_row);
 }
 
 
@@ -141,4 +144,16 @@ void terminal_writestring(const char* data) {
  =============================================================================*/
 void terminal_setcolor(uint8_t color) {
  	terminal_color = color;
+}
+
+/**=============================================================================
+ *  Updates the cursor of the TTY
+ =============================================================================*/
+void move_cursor(int x, int y){
+  uint16_t pos = y * VGA_WIDTH + x;
+
+	outb(0x3D4, 0x0F);
+	outb(0x3D5, (uint8_t) (pos & 0xFF));
+	outb(0x3D4, 0x0E);
+	outb(0x3D5, (uint8_t) ((pos >> 8) & 0xFF));
 }
