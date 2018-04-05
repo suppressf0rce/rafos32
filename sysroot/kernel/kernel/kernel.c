@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <kernel/tty.h>
 #include <kernel/io.h>
+#include <kernel/gdt.h>
 
 /*=======================================================
  * Kernel main method. This method will be active
@@ -17,7 +18,9 @@
 =======================================================*/
 void kernel_main(void){
   terminal_initialize();
-	printf("Initialized TTY!\n");
+	printf("Initialized TTY.\n");
 
+  printf("Installing GDT...\n");
+  gdt_install();
 
 }
