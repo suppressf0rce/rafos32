@@ -11,6 +11,7 @@
 #include <kernel/tty.h>
 #include <kernel/io.h>
 #include <kernel/gdt.h>
+#include <kernel/idt.h>
 
 
 /**=============================================================================
@@ -23,6 +24,9 @@ void kernel_early(){
 
   printf("Installing GDT...\n");
   gdt_install();
+
+  printf("Installing IDT...\n");
+  idt_install();
 
   printf("Welcome to the RafOS!\n");
 }
