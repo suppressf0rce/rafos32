@@ -13,6 +13,7 @@
 #include <kernel/gdt.h>
 #include <kernel/idt.h>
 
+#include <devices/timer.h>
 
 /**=============================================================================
  * kernel_early: this function will install most important components of kernel
@@ -28,6 +29,12 @@ void kernel_early(){
   printf("Installing IDT...\n");
   idt_install();
 
+
+
+  //Setting up devices
+  printf("Installing Timer and System Time...\n");
+  timer_install();
+
   printf("Welcome to the RafOS!\n");
 }
 
@@ -40,8 +47,8 @@ void kernel_main(void){
   //Calling kernel_early function
   kernel_early();
 
-  printf("Kernel Shell has not been implemented yet. Halting!");
-  for(;;){
-    asm("hlt");
-  }
+  // printf("Kernel Shell has not been implemented yet. Halting!");
+  // for(;;){
+  //   asm("hlt");
+  // }
 }

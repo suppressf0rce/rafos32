@@ -1,3 +1,11 @@
+//
+// Copyright (c) 2018 by Dejan Radmanovic (SuppresSF0rcE).
+// All Rights Reserved.
+//
+// This file is part of RafOS and is released under the terms
+// of the NSCA License - See LICENSE.md for more info
+//
+
 #include <kernel/idt.h>
 #include <kernel/interrupts.h>
 #include <kernel/io.h>
@@ -24,7 +32,7 @@ bool register_interrupt_handler(
 
 void fault_handler(struct regs *r) {
   printf("System Exception. System Halted!\n");
-  for (;;);
+  for (;;){ asm("hlt"); };
 }
 
 void irq_handler(struct regs *r) {
